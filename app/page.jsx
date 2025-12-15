@@ -4,30 +4,10 @@ import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 import { db } from '@/lib/firebase';
+import Image from 'next/image';
 import Link from 'next/link';
+import { PostCard } from './components/ui/PostCard/PostCard';
 import styles from './page.module.css';
-
-const PostCard = ({ id, title, content, date }) => (
-  <Link href={`/post/${id}`} className={styles.cardLink}>
-    <div className={styles.glow} />
-    <div className={styles.card}>
-      <div style={{ marginBottom: '1rem' }}>
-        <h3 className={styles.cardTitle}>
-          {title}
-        </h3>
-        <time className={styles.cardDate}>
-          {new Date(date).toLocaleDateString('pt-BR', { dateStyle: 'long' })}
-        </time>
-      </div>
-      <p className={styles.cardContent}>
-        {content}
-      </p>
-      <div className={styles.readMore}>
-        Ler mais <span className={styles.arrow}>→</span>
-      </div>
-    </div>
-  </Link>
-);
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -59,12 +39,24 @@ export default function HomePage() {
     <div className={styles.container}>
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.profileWrapper}>
+          <Image
+            src="/images/profile.png"
+            alt="Eliezer Assunção de Paulo"
+            width={150}
+            height={150}
+            className={styles.profileImage}
+            priority
+          />
+        </div>
         <h1 className={styles.title}>
-          Explorando <br/>
-          <span className={styles.highlight}>Ideias & Códigos</span>
+          Eliezer Assunção de Paulo
         </h1>
+        <h2 className={styles.role}>
+          Programador Web
+        </h2>
         <p className={styles.subtitle}>
-          Um espaço minimalista para compartilhar aprendizados, tutoriais e pensamentos sobre tecnologia.
+          Compartilhando ideias, códigos e experiências no mundo do desenvolvimento.
         </p>
       </section>
 
@@ -89,10 +81,12 @@ export default function HomePage() {
             {posts.map((post) => (
               <PostCard
                 key={post.id}
-                id={post.id}
                 title={post.title}
                 content={post.content || ''}
                 date={post.createdAt?.toDate ? post.createdAt.toDate() : post.createdAt || new Date()}
+                author={post.authorName}
+                as={Link}
+                href={`/post/${post.id}`}
               />
             ))}
           </div>

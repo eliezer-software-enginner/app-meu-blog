@@ -5,8 +5,8 @@ import { doc, getDoc } from 'firebase/firestore';
 import { use, useEffect, useState } from 'react';
 
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
 import { db } from '../../../lib/firebase';
+import { ArticleViewer } from '../../components/ui/ArticleViewer/ArticleViewer';
 import styles from './page.module.css';
 
 export default function PostPage({ params }) {
@@ -71,17 +71,22 @@ export default function PostPage({ params }) {
       
       <article>
         <header className={styles.header}>
-          <time className={styles.date}>
-            {post.createdAt?.toDate ? post.createdAt.toDate().toLocaleDateString('pt-BR', { dateStyle: 'long' }) : 'Data desconhecida'}
-          </time>
+          <div className={styles.meta}>
+            <time className={styles.date}>
+              {post.createdAt?.toDate ? post.createdAt.toDate().toLocaleDateString('pt-BR', { dateStyle: 'long' }) : 'Data desconhecida'}
+            </time>
+            {post.authorName && (
+              <span className={styles.author}>
+                por <strong>{post.authorName}</strong>
+              </span>
+            )}
+          </div>
           <h1 className={styles.title}>
             {post.title}
           </h1>
         </header>
         
-        <div className={styles.content}>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+        <ArticleViewer content={post.content} />
       </article>
     </div>
   );

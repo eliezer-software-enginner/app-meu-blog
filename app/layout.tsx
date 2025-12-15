@@ -16,7 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Meu Blog Pessoal",
+  title: "Blog do Eliezer",
   description: "Um blog minimalista e moderno.",
 };
 

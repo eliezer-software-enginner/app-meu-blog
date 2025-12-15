@@ -11,7 +11,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          MeuBlog
+          Blog do Eliezer
         </Link>
         <nav className={styles.nav}>
           <Link href="/" className={styles.navLink}>
