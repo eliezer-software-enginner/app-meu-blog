@@ -1,0 +1,185 @@
+.wrapper {
+  max-width: 48rem; /* max-w-3xl */
+  margin: 0 auto;
+  animation: slideUp 0.7s ease-out;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--primary);
+}
+
+.arrow {
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.backLink:hover .arrow {
+  transform: translateX(-4px);
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.date {
+  display: block;
+  font-size: 0.875rem;
+  font-family: monospace;
+  color: var(--primary);
+  background-color: rgba(139, 92, 246, 0.1);
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(to bottom right, var(--foreground), #94a3b8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Typography / Prose - Custom Implementation since we removed @tailwindcss/typography */
+.content {
+  color: #e2e8f0;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.content h1, .content h2, .content h3, .content h4 {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content h1 { font-size: 2.25rem; }
+.content h2 { font-size: 1.875rem; }
+.content h3 { font-size: 1.5rem; }
+
+.content p {
+  margin-bottom: 1.25rem;
+}
+
+.content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.content ul, .content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  font-style: italic;
+  color: #94a3b8;
+  margin: 1.5rem 0;
+}
+
+.content code {
+  background-color: var(--secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.875em;
+  color: var(--accent);
+}
+
+.content pre {
+  background-color: var(--card);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+.content img {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+  color: #94a3b8;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.errorTitle {
+  font-size: 2.25rem;
+  color: #ef4444; /* destructive */
+  font-weight: 700;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

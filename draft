@@ -1,0 +1,81 @@
+npm i @tanstack/react-table
+npm i axios
+
+card e tal tá dentro de @radix-ui/themes
+npm install @radix-ui/themes
+
+https://www.radix-ui.com/themes/docs/overview/getting-started
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest init
+✔ Preflight checks.
+✔ Verifying framework. Found Next.js.
+✔ Validating Tailwind CSS config. Found v4.
+✔ Validating import alias.
+✔ Which color would you like to use as the base color? › Neutral
+✔ Writing components.json.
+✔ Checking registry.
+✔ Updating CSS variables in app/globals.css
+✔ Installing dependencies.
+✔ Created 1 file:
+
+- lib/utils.ts
+
+Success! Project initialization completed.
+You may now add components.
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add button
+✔ Checking registry.
+✔ Installing dependencies.
+✔ Created 1 file:
+
+- components/ui/button.tsx
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add react-table
+npx shadcn@latest add card
+npx shadcn@latest add item
+Something went wrong. Please check the error below for more details.
+If the problem persists, please open an issue on GitHub.
+
+Message:
+The item at https://ui.shadcn.com/r/styles/new-york-v4/react-table.json was not found. It may not exist at the registry.
+
+Suggestion:
+Check if the item name is correct and the registry URL is accessible.
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add table
+✔ Checking registry.
+✔ Created 1 file:
+
+- components/ui/table.tsx
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add dropdown-menu
+✔ Checking registry.
+✔ Installing dependencies.
+✔ Created 1 file:
+
+- components/ui/dropdown-menu.tsx
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add checkox
+^C
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add checkbox
+✔ Checking registry.
+✔ Installing dependencies.
+✔ Created 1 file:
+
+- components/ui/checkbox.tsx
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npx shadcn@latest add input
+✔ Checking registry.
+✔ Created 1 file:
+
+- components/ui/input.tsx
+
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$ npm i @tanstack/react-table
+
+added 2 packages, and audited 479 packages in 2s
+
+179 packages are looking for funding
+run `npm fund` for details
+
+found 0 vulnerabilities
+eliezer@eliezer-IdeaPad-3-15ALC6:~/Documents/my-projects/estudos/nextjs/app-1-products$
