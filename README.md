@@ -1,35 +1,37 @@
-🧪 EXERCÍCIO DESAFIADOR DO MÓDULO 2
+# Blog do Eliezer
 
-Este exercício simula um cenário real de empresa financeira.
+Bem-vindo ao repositório do meu blog pessoal! 👋
 
-Crie uma aplicação Next.js com a rota:
+Este é um espaço dedicado a compartilhar minhas experiências, tutoriais e pensamentos sobre desenvolvimento web e tecnologia. O projeto foi construído com foco em performance e uma experiência de leitura agradável.
 
-dashboard/
-Regras (obrigatórias):
+## 🚀 Sobre o Projeto
 
-SSR com 3 tipos de cache juntos:
+O **Blog do Eliezer** é uma plataforma moderna de publicação de conteúdo. O design foi cuidadosamente pensado para refletir minha identidade como Programador Web, utilizando uma estética limpa ("Dark Mode") e elementos visuais modernos.
 
-no-store para dados sensíveis
+### ✨ Funcionalidades
 
-revalidate: X para métricas
+- **Design Premium**: Interface moderna com modo escuro e efeitos visuais sutis (Glassmorphism).
+- **Leitura Confortável**: Tipografia otimizada e suporte completo a **Markdown** (ideal para exibir códigos e tutoriais).
+- **Área do Autor**: Sistema de login seguro com Google para criação e gerenciamento de posts.
+- **Responsividade**: Layout adaptável que funciona perfeitamente em qualquer dispositivo (Desktop ou Mobile).
 
-force-cache para conteúdo estável
+## 🛠️ Como Executar
 
-Buscar estes endpoints (pode ser com API fake tipo dummyjson, mas deve respeitar regras abaixo):
+Para rodar este projeto localmente:
 
-🔹 Dados sensíveis (no-store)
-https://dummyjson.com/carts/1
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-🔹 Dados de métricas (revalidate)
-https://dummyjson.com/products?limit=5
+2. Configure as credenciais do Firebase (arquivo `.env.local`).
 
-🔹 Dados estáveis (cache padrão)
-https://dummyjson.com/users
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-Renderizar tudo em server component.
+Acesse `http://localhost:3000` e aproveite!
 
-Exibir cada grupo dentro de um componente de UI pronto (Card, Table, Badge etc).
-
-Criar um header persistente com CSS module.
-
-Usar Promise.all para otimizar.
+---
+*Desenvolvido por Eliezer Assunção de Paulo.*
